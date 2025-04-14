@@ -1,0 +1,46 @@
+# Default configuration for Stable Diffusion fine-tuning
+
+# Data configuration
+data:
+  dataset_name: "laion/laion400m"
+  subset_name: "default"  # Updated to use 'default' config
+  resolution: 512
+  center_crop: true
+  random_flip: true
+  max_train_samples: 5000  # Reduced for better stability
+  max_val_samples: 500
+
+# Model configuration
+model:
+  pretrained_model_name_or_path: "CompVis/stable-diffusion-v1-4"
+  revision: null
+  train_text_encoder: false
+
+# Training configuration
+training:
+  output_dir: "models/stable-diffusion-finetuned"
+  logging_dir: "logs"
+  seed: 42
+  mixed_precision: "fp16"
+  train_batch_size: 4
+  val_batch_size: 4
+  num_train_epochs: 100
+  max_train_steps: 10000
+  gradient_accumulation_steps: 4
+  learning_rate: 1.0e-5
+  lr_scheduler: "cosine"
+  lr_warmup_steps: 500
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_weight_decay: 1.0e-2
+  adam_epsilon: 1.0e-8
+  max_grad_norm: 1.0
+  logging_steps: 10
+  save_steps: 500
+  resume_from_checkpoint: null
+
+# Weights & Biases configuration
+wandb:
+  use_wandb: true
+  project: "stable-diffusion-finetuning"
+  entity: null

@@ -1,0 +1,100 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Stable Diffusion specific
+models/
+outputs/
+logs/
+checkpoints/
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.bin
+
+# Dataset files
+datasets/
+*.hdf5
+*.h5
+*.tfrecord
+*.arrow
+*.parquet
+*.cache/
+
+# Logs and debugging
+*.log
+*.out
+wandb/
+runs/
+lightning_logs/
+tb_logs/
+
+# Large media files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.mp4
+*.webm
+*.webp
+*.tiff
+*.bmp
+*.ico
+*.svg
+
+# Hugging Face cache
+.cache/
+huggingface/
+
+# Config files with sensitive information
+.env
+config.local.yaml
+*_token.txt
+*_key.txt
+
+# Allow specific media files for documentation
+!docs/images/*.png
+!docs/images/*.jpg
+!examples/*.png
+!examples/*.jpg
+!assets/*.png
+!assets/*.jpg
+
+# Temporary files
+tmp/
+temp/
+.temp/

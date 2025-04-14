@@ -1,0 +1,33 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+diffusers>=0.18.0
+accelerate>=0.20.0
+datasets>=2.12.0
+huggingface_hub>=0.15.0
+
+# Image processing
+Pillow>=9.5.0
+numpy>=1.24.0
+opencv-python>=4.7.0
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0
+requests>=2.31.0
+urllib3>=1.26.15
+matplotlib>=3.7.0
+
+# Web UI
+gradio>=3.32.0
+streamlit>=1.22.0
+
+# Logging and monitoring
+wandb>=0.15.0
+tensorboard>=2.12.0
+
+# Optional: for better performance
+triton>=2.0.0
+xformers>=0.0.20
+bitsandbytes>=0.39.0
