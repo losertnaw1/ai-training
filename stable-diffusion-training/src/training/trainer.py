@@ -143,12 +143,16 @@ class StableDiffusionTrainer:
         logger.info("Starting training")
 
         # Resume from checkpoint if specified
-        if self.resume_from_checkpoint is not None:
-            self._resume_from_checkpoint()
-
-        # Initialize progress bar
-        progress_bar = tqdm(range(self.max_train_steps), desc="Training")
         global_step = 0
+        if self.resume_from_checkpoint is not None:
+            global_step = self._resume_from_checkpoint()
+
+        # Initialize progress bar starting from the resumed step
+        progress_bar = tqdm(
+            range(global_step, self.max_train_steps),
+            desc="Training",
+            initial=global_step,
+        )
 
         # Training loop
         for epoch in range(self.num_train_epochs):
@@ -377,7 +381,7 @@ class StableDiffusionTrainer:
             os.path.join(save_dir, "training_state.pt"),
         )
 
-    def _resume_from_checkpoint(self) -> None:
+    def _resume_from_checkpoint(self) -> int:
         """
         Resume training from a checkpoint.
         """
@@ -401,9 +405,9 @@ class StableDiffusionTrainer:
 
         # Load training state
         training_state_path = os.path.join(self.resume_from_checkpoint, "training_state.pt")
+        global_step = 0
         if os.path.exists(training_state_path):
             training_state = torch.load(training_state_path)
-            global_step = training_state["global_step"]
+            global_step = training_state.get("global_step", 0)
 
-            # Skip already processed steps
-            self.max_train_steps += global_step
+        return global_step
