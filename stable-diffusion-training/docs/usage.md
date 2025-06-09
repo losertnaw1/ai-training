@@ -7,9 +7,10 @@ This document provides instructions for using the Stable Diffusion training pipe
 ### Prerequisites
 
 - Python 3.8 or higher
-- CUDA-compatible GPU with at least 16GB of VRAM
-- At least 32GB of system RAM
-- At least 100GB of free disk space
+- Intel Core i7-14700 CPU
+- NVIDIA 5060 Ti GPU with 16GB of VRAM
+- 32GB of system RAM
+- 500GB SSD (or equivalent free disk space)
 
 ### Installation
 
@@ -134,6 +135,7 @@ If you encounter out of memory errors:
 2. Use gradient accumulation (increase `gradient_accumulation_steps`)
 3. Reduce the image resolution
 4. Use mixed precision training (`--mixed_precision fp16`)
+5. Memory efficient attention is enabled automatically for 16GB GPUs.
 
 ### Poor Image Quality
 

@@ -37,6 +37,7 @@ ENV/
 
 # Stable Diffusion specific
 models/
+!stable-diffusion-training/src/models/
 outputs/
 logs/
 checkpoints/

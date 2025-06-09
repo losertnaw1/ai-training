@@ -7,6 +7,7 @@ This repository contains code for fine-tuning Stable Diffusion models using the 
 - Fine-tune Stable Diffusion models on the LAION-400M dataset
 - Robust dataset handling with error recovery
 - Mixed precision training support
+- Automatic memory-efficient attention for GPUs with 16GB VRAM
 - Inference script for generating images
 - Web UI for interactive image generation
 
@@ -15,7 +16,10 @@ This repository contains code for fine-tuning Stable Diffusion models using the 
 ### Prerequisites
 
 - Python 3.8+
-- CUDA-compatible GPU with at least 8GB VRAM
+- Intel Core i7-14700 CPU
+- NVIDIA 5060 Ti GPU with 16GB VRAM
+- 32GB system RAM
+- 500GB SSD
 - Hugging Face account with API token
 
 ### Installation
