@@ -1,4 +1,9 @@
 # Default configuration for Stable Diffusion fine-tuning
+# Recommended hardware:
+#   - Intel Core i7-14700 CPU
+#   - NVIDIA 5060 Ti GPU with 16GB VRAM
+#   - 32GB RAM
+#   - 500GB SSD
 
 # Data configuration
 data:
